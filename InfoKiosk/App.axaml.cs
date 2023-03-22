@@ -21,6 +21,9 @@ namespace InfoKiosk
                 {
                     DataContext = new MainWindowViewModel(),
                 };
+                var window = new MainWindow();
+                window.DataContext = new MainWindowViewModel();
+                window.Show();
             }
 
             base.OnFrameworkInitializationCompleted();
