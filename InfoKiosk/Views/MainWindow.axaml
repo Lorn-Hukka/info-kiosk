@@ -7,7 +7,6 @@
         x:Class="InfoKiosk.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="InfoKiosk"
 		WindowState="FullScreen">
 
     <Design.DataContext>
@@ -15,7 +14,10 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-	
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<TextBlock Text="{Binding Greeting}"/>
+		<TextBlock Text="To główne okno naszej aplikacji. Tutaj będziemy wyświetlać rzeczy"/>
+	</StackPanel>
+        
 </Window>

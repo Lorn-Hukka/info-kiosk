@@ -22,14 +22,13 @@ namespace InfoKiosk
             {
                 Screen? biggerScreen = GetBiggerScreen();
                 Screen? smallerScreen = GetSmallerScreen();
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                    Position = new PixelPoint(biggerScreen.Bounds.X, 0)
-                };
 
-                var window = new MainWindow();
-                window.DataContext = new MainWindowViewModel();
+                desktop.MainWindow = new MainWindow();
+                desktop.MainWindow.DataContext = new MainWindowViewModel();
+                desktop.MainWindow.Position = new PixelPoint(biggerScreen.Bounds.X, 0);
+
+                var window = new InputWindow();
+                window.DataContext = new InputWindowViewModel();
                 window.Position = new PixelPoint(smallerScreen.Bounds.X, 0);
                 window.Show();
             }
