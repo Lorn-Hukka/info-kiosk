@@ -22,7 +22,7 @@
 	    <vm:InputWindowViewModel/>
     </Design.DataContext>
 	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-		<Button Content="Dawaj"/>
-		<Button Content="Klikaj"/>
+		<Button Content="Dawaj" Command="{Binding DawajCommand}"/>
+		<Button Content="Klikaj" Command="{Binding KlikajCommand}"/>
 	</StackPanel>
 </Window>
