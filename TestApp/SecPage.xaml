@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="idkwaid.SecPage"
+             Title="SecPage"
+             MaximumHeightRequest="25"
+             Shell.NavBarIsVisible="false"
+             Shell.TabBarIsVisible="false">
+    <VerticalStackLayout>
+        <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+        <Label
+            x:Name="LicznikInterakcji"
+            Text="Wykonano interakcje 0 razy"
+            SemanticProperties.HeadingLevel="Level2"
+            SemanticProperties.Description="Licznik interakcji"
+            FontSize="18"
+            HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
