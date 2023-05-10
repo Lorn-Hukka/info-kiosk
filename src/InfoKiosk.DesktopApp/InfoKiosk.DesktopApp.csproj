@@ -15,6 +15,9 @@
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-preview5" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Prism.Avalonia" Version="8.1.97.4-preview.11.5" />
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.4-preview.11.5" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
@@ -22,6 +25,14 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\InfoKiosk.Client.PocketBase\InfoKiosk.Client.PocketBase.csproj" />
     <ProjectReference Include="..\InfoKiosk.Desktop.ImagePresentation\InfoKiosk.Desktop.ImagePresentation.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

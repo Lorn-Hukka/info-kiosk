@@ -9,10 +9,21 @@
     <PackageReference Include="Avalonia" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
     <PackageReference Include="Prism.Avalonia" Version="8.1.97.4-preview.11.5" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview5" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InfoKiosk.Client\InfoKiosk.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ImagePresentationSlideView.axaml.cs">
+      <DependentUpon>ImagePresentationSlideView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
