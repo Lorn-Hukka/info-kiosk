@@ -10,7 +10,7 @@ namespace InfoKiosk.Credits
 		public void OnInitialized(IContainerProvider containerProvider)
 		{
 			var regionManager = containerProvider.Resolve<IRegionManager>();
-			regionManager.RegisterViewWithRegion("Credits", typeof(CreditsView));
+			regionManager.RegisterViewWithRegion("MainRegion", typeof(CreditsView));
 		}
 
 		public void RegisterTypes(IContainerRegistry containerRegistry)
