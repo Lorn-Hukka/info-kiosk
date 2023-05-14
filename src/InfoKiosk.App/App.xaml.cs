@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using InfoKiosk.Presentation;
+using InfoKiosk.Credits;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -21,6 +21,7 @@ namespace InfoKiosk.App
         }
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
+            moduleCatalog.AddModule<CreditsModule>();
         }
     }
 }
