@@ -1,25 +1,40 @@
-﻿using Prism.Mvvm;
+﻿using InfoKiosk.Modules.Credits.Models;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InfoKiosk.Credits.ViewModels
+namespace InfoKiosk.Credits.Modules.ViewModels
 {
 	public class CreditsViewModel : BindableBase
 	{
-		public List<string> Creators { get; }
+		public List<Person> Creators { get; }
+		public List<Person> Instructors { get; }
 		public CreditsViewModel()
 		{
-			Creators = new List<string>();
-			Creators.Add("Bartosz Dobija");
-			Creators.Add("Wojciech Kasolik");
-			Creators.Add("Nikodem Nikiel");
-			Creators.Add("Mateusz Jakobsche");
-			Creators.Add("Adam Gigiewicz");
-			Creators.Add("Tomasz Gancarczyk");
-			Creators.Add("Łukasz Hamera");
+			Creators = new List<Person>();
+			Instructors = new List<Person>();
+			Creators = addCreators(Creators);
+			Instructors = addInstructors(Instructors);
+		}
+
+		private List<Person> addInstructors(List<Person> instructors)
+		{
+			throw new NotImplementedException();
+		}
+
+		private static List<Person> addCreators(List<Person> creators)
+		{
+			creators.Add(new Person
+			{
+				Name = "Bartosz",
+				Surname = "Dobija",
+				GitHub = "https://github.com/BartShoot",
+				Email = "dobija.bartosz@gmail.com"
+			});
+			return creators;
 		}
 	}
 }
