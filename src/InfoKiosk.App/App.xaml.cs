@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using InfoKiosk.Presentation;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
