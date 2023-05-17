@@ -1,9 +1,9 @@
-﻿using InfoKiosk.Credits.Views;
+﻿using InfoKiosk.Modules.Credits.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace InfoKiosk.Credits
+namespace InfoKiosk.Modules.Credits
 {
 	public class CreditsModule : IModule
 	{

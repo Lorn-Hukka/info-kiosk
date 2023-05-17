@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoKiosk.App", "src\InfoKi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{734CB1BA-F8AF-45F5-977F-75820E1E51F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoKiosk.Credits", "src\Credits\InfoKiosk.Credits.csproj", "{1FE6F2ED-95EA-45FD-A47D-21BB71411E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoKiosk.Modules.Credits", "src\Credits\InfoKiosk.Modules.Credits.csproj", "{1FE6F2ED-95EA-45FD-A47D-21BB71411E12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

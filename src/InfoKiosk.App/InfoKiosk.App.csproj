@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Credits\InfoKiosk.Credits.csproj" />
+    <ProjectReference Include="..\Credits\InfoKiosk.Modules.Credits.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using InfoKiosk.Credits;
+using InfoKiosk.Modules.Credits;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
