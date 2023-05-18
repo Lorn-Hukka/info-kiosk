@@ -10,5 +10,6 @@
 	<ItemGroup>
 		<PackageReference Include="Prism.Core" Version="8.1.97" />
 		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+		<PackageReference Include="QRCoder" Version="1.4.3" />
 	</ItemGroup>
 </Project>
