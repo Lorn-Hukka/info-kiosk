@@ -1,5 +1,7 @@
 ﻿using InfoKiosk.Modules.Credits.Models;
 using Prism.Mvvm;
+using Prism.Services.Dialogs;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,26 +16,34 @@ namespace InfoKiosk.Credits.Modules.ViewModels
 		public List<Person> Instructors { get; }
 		public CreditsViewModel()
 		{
+			QRCodeGenerator qrGenerator = new QRCodeGenerator();
 			Creators = new List<Person>();
 			Instructors = new List<Person>();
-			Creators = addCreators(Creators);
-			Instructors = addInstructors(Instructors);
+			Creators = addCreators(Creators, qrGenerator);
+			Instructors = addInstructors(Instructors, qrGenerator);
 		}
 
-		private List<Person> addInstructors(List<Person> instructors)
+		private List<Person> addInstructors(List<Person> instructors, QRCodeGenerator qrGenerator)
 		{
-			throw new NotImplementedException();
+			instructors.Add(
+				new Person("Łukasz", "Hamera", "https://github.com/LucasHamera", "lhamera@ath.bielsko.pl", qrGenerator));
+			instructors.Add(
+				new Person("Tomasz", "Gancarczyk", "", "tgan@ath.bielsko.pl", qrGenerator));
+			return instructors;
 		}
 
-		private static List<Person> addCreators(List<Person> creators)
+		private static List<Person> addCreators(List<Person> creators, QRCodeGenerator qrGenerator)
 		{
-			creators.Add(new Person
-			{
-				Name = "Bartosz",
-				Surname = "Dobija",
-				GitHub = "https://github.com/BartShoot",
-				Email = "dobija.bartosz@gmail.com"
-			});
+			creators.Add(
+				new Person("Bartosz", "Dobija", "https://github.com/BartShoot", "dobija.bartosz@gmail.com", qrGenerator));
+			creators.Add(
+				new Person("Wojciech", "Kasolik", "https://github.com/Lorn-Hukka", "", qrGenerator));
+			creators.Add(
+				new Person("Nikodem", "Nikiel", "https://github.com/VeliverX", "", qrGenerator));
+			creators.Add(
+				new Person("Mateusz", "Jakobsche", "https://github.com/MateuszJakobsche", "", qrGenerator));
+			creators.Add(
+				new Person("Adam", "Gigiewicz", "https://github.com/AdamGigiewicz", "", qrGenerator));
 			return creators;
 		}
 	}

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:InfoKiosk.Credits.Modules.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -20,8 +21,56 @@
     <StackPanel>
         <Label>Projekt InfoKiosk powstał w ramach projektu Uczelnie Przyszłości(chyba)</Label>
         <Label>Twórcy: </Label>
-        <ListView ItemsSource="{Binding Creators}">
-            
-        </ListView>
+        <ItemsControl ItemsSource="{Binding Creators}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="15" Margin="10">
+                        <Border.Background>
+                            <SolidColorBrush Color="LightGray"/>
+                        </Border.Background>
+                        <StackPanel Margin="10" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Name}"/>
+                                <Label Content="{Binding Surname}"/>
+                            </StackPanel>
+                            <Label Content="{Binding GitHub}"/>
+                            <Label Content="{Binding Email}"/>
+                            <Image Source="{Binding qrCode}" Width="400"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Label>Prowadzący:</Label>
+        <ItemsControl ItemsSource="{Binding Instructors}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="15" Margin="10">
+                        <Border.Background>
+                            <SolidColorBrush Color="LightGray"/>
+                        </Border.Background>
+                        <StackPanel Margin="10" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Name}"/>
+                                <Label Content="{Binding Surname}"/>
+                            </StackPanel>
+                            <Label Content="{Binding GitHub}"/>
+                            <Label Content="{Binding Email}"/>
+                            <Image Source="{Binding qrCode}" Width="400"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </StackPanel>
 </UserControl>
