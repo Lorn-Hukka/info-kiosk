@@ -6,6 +6,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.DataContext>
+        <vm:CreditsViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Control}" x:Key="creditsStyle">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource creditsStyle}"/>
+    </UserControl.Resources>
+    
     <StackPanel>
         <Label>Projekt InfoKiosk powstał w ramach projektu Uczelnie Przyszłości(chyba)</Label>
         <Label>Twórcy: </Label>
