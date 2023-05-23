@@ -29,6 +29,7 @@ namespace InfoKiosk.Credits.Modules.ViewModels
 				new Person("Łukasz", "Hamera", "https://github.com/LucasHamera", "lhamera@ath.bielsko.pl", qrGenerator));
 			instructors.Add(
 				new Person("Tomasz", "Gancarczyk", "", "tgan@ath.bielsko.pl", qrGenerator));
+			instructors.Sort((x, y) => string.Compare(x.Surname, y.Surname));
 			return instructors;
 		}
 
@@ -44,6 +45,7 @@ namespace InfoKiosk.Credits.Modules.ViewModels
 				new Person("Mateusz", "Jakobsche", "https://github.com/MateuszJakobsche", "", qrGenerator));
 			creators.Add(
 				new Person("Adam", "Gigiewicz", "https://github.com/AdamGigiewicz", "", qrGenerator));
+			creators.Sort((x, y) => string.Compare(x.Surname, y.Surname));
 			return creators;
 		}
 	}
