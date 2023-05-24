@@ -11,12 +11,17 @@ namespace InfoKiosk.Modules.Credits.ViewModels
         {
             var creators = new List<Person>
             {
-                new Person("Bartosz", "Dobija", "https://github.com/BartShoot", "dobija.bartosz@gmail.com")
-            };
+                new Person("Bartosz", "Dobija", "https://github.com/BartShoot", "dobija.bartosz@gmail.com"),
+				new Person("Wojciech", "Kasolik", "https://github.com/Lorn-Hukka", ""),
+				new Person("Nikodem", "Nikiel", "https://github.com/VeliverX", ""),
+				new Person("Mateusz", "Jakobsche", "https://github.com/MateuszJakobsche", ""),
+				new Person("Adam", "Gigiewicz", "https://github.com/AdamGigiewicz", "")
+			};
             var instructors = new List<Person>
             {
-				new Person("Łukasz", "Hamera", "https://github.com/LucasHamera", "lhamera@ath.bielsko.pl")
-            };
+				new Person("Łukasz", "Hamera", "https://github.com/LucasHamera", "lhamera@ath.bielsko.pl"),
+				new Person("Tomasz", "Gancarczyk", "", "tgan@ath.bielsko.pl")
+			};
 
             Creators = ConvertToViewModels(creators);
             Instructors = ConvertToViewModels(instructors);
@@ -24,7 +29,8 @@ namespace InfoKiosk.Modules.Credits.ViewModels
 
         private List<PersonViewModel> ConvertToViewModels(List<Person> people)
         {
-            return people.Select(ConvertToViewModel).ToList();
+			people.Sort((x, y) => string.Compare(x.Surname, y.Surname));
+			return people.Select(ConvertToViewModel).ToList();
         }
 
         private PersonViewModel ConvertToViewModel(Person person)
