@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="InfoKiosk.Modules.PRESENTATION.Views.Presentation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InfoKiosk.Modules.PRESENTATION.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Width="780">
+            <Button x:Name="previousButton" Content=" ← " Margin="10,10,10,10" BorderBrush="White" Width="30" Height="20" FontWeight="Bold" FontFamily="Cambria"/>
+            <ProgressBar x:Name="timerProgress" HorizontalAlignment="Left" Height="20" Margin="10,10,10,10" Foreground="DarkCyan" VerticalAlignment="Top" Width="660" BorderBrush="White" Visibility="Hidden"/>
+            <Button x:Name="nextButton" Content=" → " Margin="10" BorderBrush="White" Width="30" FontFamily="Cambria" FontWeight="Bold"/>
+        </StackPanel>
+
+        <Grid x:Name="grid" Grid.Row="1">
+        </Grid>
+
+        <StackPanel x:Name="fileIndicatorsPanel" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+        </StackPanel>
+    </Grid>
+</UserControl>
