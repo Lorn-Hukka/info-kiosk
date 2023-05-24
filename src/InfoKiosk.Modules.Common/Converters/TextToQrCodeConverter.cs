@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace InfoKiosk.Modules.Credits.Converters
+namespace InfoKiosk.Modules.Common.Converters
 {
-    internal class TextToQrCodeConverter: IValueConverter
+    public class TextToQrCodeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
