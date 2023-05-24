@@ -3,19 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:vm="clr-namespace:InfoKiosk.Credits.Modules.ViewModels"
+             xmlns:converters="clr-namespace:InfoKiosk.Modules.Credits.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.DataContext>
-        <vm:CreditsViewModel/>
-    </UserControl.DataContext>
     <UserControl.Resources>
         <Style TargetType="{x:Type Control}" x:Key="creditsStyle">
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
         <Style TargetType="{x:Type Label}" BasedOn="{StaticResource creditsStyle}"/>
+
+        <converters:TextToQrCodeConverter x:Key="TextToQrCodeConverter" />
     </UserControl.Resources>
     
     <StackPanel>
@@ -40,7 +39,7 @@
                             </StackPanel>
                             <Label Content="{Binding GitHub}"/>
                             <Label Content="{Binding Email}"/>
-                            <Image Source="{Binding qrCode}" Width="400"/>
+                            <Image Source="{Binding GitHub, Converter={StaticResource TextToQrCodeConverter}}" Width="400"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
@@ -66,7 +65,7 @@
                             </StackPanel>
                             <Label Content="{Binding GitHub}"/>
                             <Label Content="{Binding Email}"/>
-                            <Image Source="{Binding qrCode}" Width="400"/>
+                            <Image Source="{Binding GitHub, Converter={StaticResource TextToQrCodeConverter}}" Width="400"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
