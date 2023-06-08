@@ -23,7 +23,6 @@ namespace InfoKiosk.Modules.Home.Views
 
         public HomeView()
         {
-            string link = "https://lh3.googleusercontent.com/pw/AJFCJaVVKAyPiHSxpDXbMbKNunwcvhKKJaAt1tiL_scYC_oG9dU_UEqUVYpbC4XlWkQbwKei9NhHE10BNqT39SuN9_1tzNqvJduViW3b6ZKA6_SDNsUOGmMfl_bYKVsiYVNolTnzLUYVHCp88N4_azjZmQ5h=w1740-h979-s-no?authuser=0";
 
             InitializeComponent();
 
