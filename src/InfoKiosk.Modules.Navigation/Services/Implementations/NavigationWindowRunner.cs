@@ -69,16 +69,19 @@ namespace InfoKiosk.Modules.Navigation.Services.Implementations
 
         private void PlugInRelease(NavigationWindow navigationWindow)
         {
-            var screens = Screen.AllScreens;
+            var screens = Screen.AllScreens.ToArray();
             if (screens.Count() < 2)
                 throw new Exception("External monitor not connected");
 
             var mainWindow = _prismApplication.MainWindow;
-            var primaryScreen = screens.SingleOrDefault(x => x.Primary);
+            if (mainWindow is null)
+                throw new Exception("Main window not assigned.");
+
+            var primaryScreen = screens.Single(x => x.Primary);
             SetScreen(mainWindow, primaryScreen);
             mainWindow.Loaded += (sender, _) => Maximize(sender as Window);
 
-            var navigationScreen = screens.LastOrDefault();
+            var navigationScreen = screens.Last();
             SetScreen(navigationWindow, navigationScreen);
             navigationWindow.Loaded += (sender, _) => Maximize(sender as Window);
         }
@@ -93,8 +96,11 @@ namespace InfoKiosk.Modules.Navigation.Services.Implementations
             window.WindowStyle = WindowStyle.None;
         }
 
-        private void Maximize(Window window)
+        private void Maximize(Window? window)
         {
+            if (window is null)
+                return;
+            
             window.WindowState = WindowState.Maximized;
         }
     }

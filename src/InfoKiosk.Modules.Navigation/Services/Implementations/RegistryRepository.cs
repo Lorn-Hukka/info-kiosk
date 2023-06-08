@@ -5,7 +5,7 @@ namespace InfoKiosk.Modules.Navigation.Services.Implementations
     internal class RegistryRepository: IRegistryRepository
     {
         private readonly Dictionary<Type, Type> _registeredViews = new();
-        private Type _homeViewType;
+        private Type? _homeViewType = default;
 
         public Type GetNavigation<TView>() where TView : UserControl
         {
