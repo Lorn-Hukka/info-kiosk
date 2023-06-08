@@ -2,9 +2,6 @@
 using Prism.DryIoc;
 using System.Windows;
 using Prism.Modularity;
-using InfoKiosk.Modules.Home;
-using InfoKiosk.Modules.ModuleA;
-using InfoKiosk.Modules.ModuleB;
 using InfoKiosk.Modules.Navigation;
 
 namespace InfoKiosk.App
@@ -27,9 +24,6 @@ namespace InfoKiosk.App
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<NavigationModule>();
-            moduleCatalog.AddModule<ModuleA>();
-            moduleCatalog.AddModule<ModuleB>();
-            moduleCatalog.AddModule<HomeModule>();
         }
     }
 }
