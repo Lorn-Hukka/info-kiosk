@@ -10,6 +10,11 @@
         Background="Black"
         Name="Main"
         >
+        <Image x:Name="BackgroundImage" Stretch="UniformToFill" Source="/InfoKiosk.Modules.Home;component/Views/default.jpg" />
+
+        <!-- Przyciemniona powłoka -->
+        <Border Background="#80000000" />
+        
     </Grid>
 
 </UserControl>

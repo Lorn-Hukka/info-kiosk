@@ -7,9 +7,17 @@
 	  <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\default.jpg" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Prism.Core" Version="8.1.97" />
 		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Views\default.jpg" />
 	</ItemGroup>
 
 </Project>
