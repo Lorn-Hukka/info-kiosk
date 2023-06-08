@@ -1,0 +1,14 @@
+﻿<Window x:Class="InfoKiosk.Modules.Navigation.Windows.NavigationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:regions="http://prismlibrary.com/"
+        mc:Ignorable="d"
+        Title="NavigationWindow" Height="450" Width="800">
+    <ContentControl 
+        regions:RegionManager.RegionManager="{Binding RegionManager}"
+        regions:RegionManager.RegionName="NavigationRegion" 
+        MinHeight="150" 
+        MinWidth="150"/>
+</Window>

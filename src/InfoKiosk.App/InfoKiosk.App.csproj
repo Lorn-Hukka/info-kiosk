@@ -12,4 +12,11 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InfoKiosk.Modules.Home\InfoKiosk.Modules.Home.csproj" />
+    <ProjectReference Include="..\InfoKiosk.Modules.ModuleA\InfoKiosk.Modules.ModuleA.csproj" />
+    <ProjectReference Include="..\InfoKiosk.Modules.ModuleB\InfoKiosk.Modules.ModuleB.csproj" />
+    <ProjectReference Include="..\InfoKiosk.Modules.Navigation\InfoKiosk.Modules.Navigation.csproj" />
+  </ItemGroup>
+
 </Project>
