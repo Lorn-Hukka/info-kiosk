@@ -26,39 +26,6 @@ namespace InfoKiosk.Modules.Home.Views
 
             InitializeComponent();
 
-            //Image image = new Image();
-            //BitmapImage bitmap = new BitmapImage(new Uri(link, UriKind.Absolute));
-            //image.Source = bitmap;
-
-
-            //Main.Background = new SolidColorBrush(Colors.Black);
-            //Main.Children.Add(image);
-
-            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(
-                            Color.FromArgb(204, 0, 0, 0),
-                            Color.FromArgb(204, 0, 0, 0),
-                            new System.Windows.Point(0.5, 0),
-                            new System.Windows.Point(0.5, 1));
-            Main.Background = linearGradientBrush;
-
-            // Dodanie tła obrazka do Grid
-            ImageBrush imageBrush = new ImageBrush();
-            imageBrush.ImageSource = new BitmapImage(new Uri("https://lorned.net/bg.jpg", UriKind.Absolute));
-            imageBrush.TileMode = TileMode.None;
-            imageBrush.Stretch = Stretch.UniformToFill;
-            Main.Children.Add(new Rectangle { Fill = imageBrush });
-
-            // Dodanie gradientu promieniowego do Grid
-            RadialGradientBrush radialGradientBrush = new RadialGradientBrush(
-                Colors.Transparent,
-                Color.FromArgb(255, 255, 255, 255));
-            radialGradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 0));
-            radialGradientBrush.GradientStops.Add(new GradientStop(Color.FromArgb(255, 255, 255, 255), 0.8));
-            radialGradientBrush.Center = new System.Windows.Point(0.4, 0.5);
-            radialGradientBrush.RadiusX = radialGradientBrush.RadiusY = 0.5;
-            Main.Children.Add(new Rectangle { Fill = radialGradientBrush });
-
-            this.Content = Main;
         }
     }
 }
