@@ -1,12 +1,15 @@
-﻿<Window x:Class="InfoKiosk.App.MainWindow"
+﻿<ui:UiWindow x:Class="InfoKiosk.App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:regions="http://prismlibrary.com/"
         mc:Ignorable="d"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Acrylic"
         Title="MainWindow" Height="450" Width="800">
     <ContentControl regions:RegionManager.RegionName="MainRegion" 
                     MinHeight="150" 
                     MinWidth="150"/>
-</Window>
+</ui:UiWindow>

@@ -1,8 +1,5 @@
 ﻿using System.Windows;
-<<<<<<< HEAD
-=======
 using InfoKiosk.Modules.Credits;
->>>>>>> 8-moduł-strona-o-autorach
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
