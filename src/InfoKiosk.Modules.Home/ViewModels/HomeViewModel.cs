@@ -13,7 +13,7 @@ namespace InfoKiosk.Modules.Home.ViewModels
         private string currentTime = "01.01.1970 00:00:00";
         private string UserName;
 
-        public string WellcomeString {
+        public string WelcomeString {
             get {
 
                 if (UserName == null || UserName == "")
