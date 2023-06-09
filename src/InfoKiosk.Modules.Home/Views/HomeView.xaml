@@ -50,10 +50,22 @@
             <Viewbox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="1">
                 <TextBlock x:Name="WelcomeName" Text="Dobry Wieczór!" FontSize="16" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Viewbox>
-            <Viewbox Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="2">
-                <TextBlock x:Name="Clock" Text="{Binding CurrentTime}" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" />
-            </Viewbox>  
-                <!--<Label Content="Słonecznie" FontSize="16" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" />-->
+            <Viewbox Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <StackPanel Margin="10">
+                    <!--<TextBlock Text="Aktualna pogoda" FontWeight="Bold" FontSize="16" Foreground="White" />-->
+                    <!--<StackPanel Orientation="Horizontal" Margin="0 5">
+                        <Image Source="https://cdn.weatherbit.io/static/img/icons/t01d.png" Width="32" Height="32" Margin="0 0 5 0" />
+                        <TextBlock Text="25°C" FontSize="14" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" />
+                    </StackPanel>-->
+                    <StackPanel Orientation="Vertical" Margin="0 5">
+                        <TextBlock x:Name="Clock" Text="{Binding CurrentTime}" FontSize="16" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+                        <Image Source="https://cdn.weatherbit.io/static/img/icons/t01d.png" Width="32" Height="32" Margin="0 0 5 0" />
+                        <TextBlock Text="Max: 21 °C | Min: 15 °C" FontSize="14" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <TextBlock Text="Wschód: 04:34 | Zachód: 20:51" FontSize="12" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </Viewbox>
+
         </Grid>
 
 
