@@ -9,15 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.Resources>
-        <!--<Style TargetType="{x:Type Control}" x:Key="creditsStyle">
-            <Setter Property="FontSize" Value="25"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource creditsStyle}"/>-->
-        <converters:TextToQrCodeConverter x:Key="TextToQrCodeConverter" />
-    </UserControl.Resources>
-
     <Frame Source="UiPage.xaml">
     </Frame>
     

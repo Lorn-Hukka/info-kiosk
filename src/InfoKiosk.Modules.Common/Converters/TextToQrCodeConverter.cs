@@ -25,7 +25,7 @@ namespace InfoKiosk.Modules.Common.Converters
             var qrGenerator = new QRCodeGenerator();
             var qrData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
             var qr = new QRCode(qrData);
-            var bitmap = qr.GetGraphic(20, System.Drawing.Color.Black, System.Drawing.Color.LightGray, true);
+            var bitmap = qr.GetGraphic(20, System.Drawing.Color.Black, System.Drawing.Color.White, true);
             return bitmap.ToBitmapSource();
         }
     }

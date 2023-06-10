@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         ExtendsContentIntoTitleBar="True"
         WindowBackdropType="Acrylic"
+        
         Title="MainWindow" Height="450" Width="800">
     <ContentControl regions:RegionManager.RegionName="MainRegion" 
                     MinHeight="150" 

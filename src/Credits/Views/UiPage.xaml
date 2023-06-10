@@ -17,11 +17,15 @@
         <Style TargetType="{x:Type Label}" BasedOn="{StaticResource creditsStyle}"/>-->
         <converters:TextToQrCodeConverter x:Key="TextToQrCodeConverter" />
     </ui:UiPage.Resources>
+    <ui:Card>
+        <ui:Card.Background>
+            <ImageBrush ImageSource="https://www.nine10.ca/wp-content/uploads/2012/07/the-meaning-of-colours.jpg"/>
+        </ui:Card.Background>
 
-    <StackPanel>
-        <Label>Projekt InfoKiosk powstał w ramach projektu Uczelnie Przyszłości(chyba)</Label>
-        <Label>Twórcy:</Label>
-        <ItemsControl ItemsSource="{Binding Creators}">
+        <StackPanel>
+            <Label>Projekt InfoKiosk powstał w ramach projektu Uczelnie Przyszłości(chyba)</Label>
+                <Label>Twórcy:</Label>
+                <ItemsControl ItemsSource="{Binding Creators}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -29,7 +33,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <ui:Card Background="LightGray" Margin="10">
+                    <ui:Card Margin="10">
                         <StackPanel Margin="10" >
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Name}"/>
@@ -66,5 +70,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-    </StackPanel>
+        </StackPanel>
+    </ui:Card>
 </ui:UiPage>

@@ -6,6 +6,12 @@
                   xmlns:dryIoc="http://prismlibrary.com/">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="{x:Type Control}" x:Key="default">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
+            <Style TargetType="{x:Type Label}" BasedOn="{StaticResource default}"/>
             <ResourceDictionary.MergedDictionaries>
                 <ui:ThemesDictionary Theme="Dark"/>
                 <ui:ControlsDictionary/>

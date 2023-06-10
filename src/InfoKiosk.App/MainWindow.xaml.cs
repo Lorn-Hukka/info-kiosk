@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Wpf.Ui.Appearance;
 
 namespace InfoKiosk.App
 {
@@ -9,11 +10,6 @@ namespace InfoKiosk.App
     {
         public MainWindow()
         {
-            Wpf.Ui.Appearance.Theme.Apply(
-              Wpf.Ui.Appearance.ThemeType.Light,     // Theme type
-              Wpf.Ui.Appearance.BackgroundType.Acrylic, // Background type
-              true                                   // Whether to change accents automatically
-            );
             InitializeComponent();
         }
     }
