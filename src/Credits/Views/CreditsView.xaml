@@ -5,14 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:converters="clr-namespace:InfoKiosk.Modules.Common.Converters;assembly=InfoKiosk.Modules.Common"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
              xmlns:local="clr-namespace:InfoKiosk.Modules.Credits.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Frame Source="UiPage.xaml">
     </Frame>
-    
-    <!--<StackPanel>
+    <UserControl.Resources>
+        <!--<Style TargetType="{x:Type Control}" x:Key="creditsStyle">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource creditsStyle}"/>-->
+        <converters:TextToQrCodeConverter x:Key="TextToQrCodeConverter" />
+    </UserControl.Resources>
+
+    <!--<StackPanel x:Name="Stack">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="https://rekrutacja.ath.bielsko.pl/thumb/zHFNLHTkHHgURBRUaDiEkPQlmajYXGQMNdWU8WUY-RmtFF1EaNQQdWhYcDxwDIB93JTEjNQQGLEcrNy1IQDkQPx4xWQI4WSMcBgAQGA1qMzQmazEkHilfCTIzOVleOAsiBBhkWWJHc0Y_Q1NFQGhhPhMoNXJMVxIBPCBhCh9nSjsXFhpacgczGgkJAAc9LSd6QGZiYlRZUgQ4KSsaCHQUPUVdGgYxECQqCghBSVRoYTsVKiQiGRkcDStldhpcMxMiBBBMEzcYMwxBQEEACz4mekBmMyhHRkBYIXJ8CBAr/bieg-2-1.jpg"/>
+        </StackPanel.Background>
         <Label>Projekt InfoKiosk powstał w ramach projektu Uczelnie Przyszłości(chyba)</Label>
         <Label>Twórcy: </Label>
         <ItemsControl ItemsSource="{Binding Creators}">
@@ -23,7 +35,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <ui:Card Background="LightGray" Margin="10">
+                    <ui:Card Margin="10" Background="{fw:AcrylicBrush TintColor=Gray, TintOpacity=0.1}">
                         <StackPanel Margin="10" >
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Name}"/>

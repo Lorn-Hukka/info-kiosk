@@ -19,7 +19,7 @@
     </ui:UiPage.Resources>
     <ui:Card>
         <ui:Card.Background>
-            <ImageBrush ImageSource="https://www.nine10.ca/wp-content/uploads/2012/07/the-meaning-of-colours.jpg"/>
+            <ImageBrush ImageSource="https://rekrutacja.ath.bielsko.pl/thumb/zHFNLHTkHHgURBRUaDiEkPQlmajYXGQMNdWU8WUY-RmtFF1EaNQQdWhYcDxwDIB93JTEjNQQGLEcrNy1IQDkQPx4xWQI4WSMcBgAQGA1qMzQmazEkHilfCTIzOVleOAsiBBhkWWJHc0Y_Q1NFQGhhPhMoNXJMVxIBPCBhCh9nSjsXFhpacgczGgkJAAc9LSd6QGZiYlRZUgQ4KSsaCHQUPUVdGgYxECQqCghBSVRoYTsVKiQiGRkcDStldhpcMxMiBBBMEzcYMwxBQEEACz4mekBmMyhHRkBYIXJ8CBAr/bieg-2-1.jpg"/>
         </ui:Card.Background>
 
         <StackPanel>
