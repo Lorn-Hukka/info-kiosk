@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoKiosk.App", "src\InfoKi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{734CB1BA-F8AF-45F5-977F-75820E1E51F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoKiosk.Modules.Info", "src\InfoKiosk.Modules.Info\InfoKiosk.Modules.Info.csproj", "{4208B02A-D9A8-458D-995E-ECD8399A873E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoKiosk.Modules.Info", "src\InfoKiosk.Modules.Info\InfoKiosk.Modules.Info.csproj", "{4208B02A-D9A8-458D-995E-ECD8399A873E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoKiosk.Modules.InfoMain", "src\InfoKiosk.Modules.InfoMain\InfoKiosk.Modules.InfoMain.csproj", "{08A149BA-9E90-47C7-B57D-715DFFE2A93F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{4208B02A-D9A8-458D-995E-ECD8399A873E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4208B02A-D9A8-458D-995E-ECD8399A873E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4208B02A-D9A8-458D-995E-ECD8399A873E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A149BA-9E90-47C7-B57D-715DFFE2A93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A149BA-9E90-47C7-B57D-715DFFE2A93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A149BA-9E90-47C7-B57D-715DFFE2A93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A149BA-9E90-47C7-B57D-715DFFE2A93F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4208B02A-D9A8-458D-995E-ECD8399A873E} = {734CB1BA-F8AF-45F5-977F-75820E1E51F2}
+		{08A149BA-9E90-47C7-B57D-715DFFE2A93F} = {734CB1BA-F8AF-45F5-977F-75820E1E51F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DBE45D0-C791-41FA-B00B-9E64B7A7A528}

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InfoKiosk.Modules.InfoMain\InfoKiosk.Modules.InfoMain.csproj" />
     <ProjectReference Include="..\InfoKiosk.Modules.Info\InfoKiosk.Modules.Info.csproj" />
   </ItemGroup>
 
