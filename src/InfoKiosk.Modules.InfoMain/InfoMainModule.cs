@@ -14,7 +14,8 @@ namespace InfoKiosk.Modules.InfoMain
             //regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoGeneralView));
             //regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoWBMiIView));
             //regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoWIMBiŚView));
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoWZiTView));
+            //regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoWZiTView));
+            regionManager.RegisterViewWithRegion("MainRegion", typeof(InfoWHSView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
