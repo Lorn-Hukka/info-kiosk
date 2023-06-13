@@ -9,5 +9,6 @@ namespace InfoKiosk.Modules.InfoMain.ViewModels
     internal class InfoMainViewModel
     {
         public string Title => "Test1234! test";
-    }
+        
+    } 
 }
