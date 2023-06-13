@@ -26,21 +26,21 @@
         
         <Button Grid.Row="1" Grid.Column="0" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="2" Grid.Column="0" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="2" Grid.Column="0" Content="WBMiI" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="3" Grid.Column="0" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="3" Grid.Column="0" Content="WBMBiŚ" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="1" Grid.Column="1" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="1" Grid.Column="1" Content="Powrót" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="2" Grid.Column="1" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="2" Grid.Column="1" Content="HOME" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="3" Grid.Column="1" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="3" Grid.Column="1" Content="Wyszukiwarka" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="1" Grid.Column="2" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="1" Grid.Column="2" Content="WZiT" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="2" Grid.Column="2" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="2" Grid.Column="2" Content="WHS" FontFamily="Verdana" FontSize="24" />
         
-        <Button Grid.Row="3" Grid.Column="2" Content="Ogólne" FontFamily="Verdana" FontSize="24" />
+        <Button Grid.Row="3" Grid.Column="2" Content="WNoZ" FontFamily="Verdana" FontSize="24" />
 
 
 
