@@ -24,5 +24,7 @@ namespace InfoKiosk.Modules.InfoMain.Views
         {
             InitializeComponent();
         }
+
+        
     }
 }
