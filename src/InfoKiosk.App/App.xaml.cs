@@ -1,7 +1,8 @@
-﻿using System.Windows;
+﻿using Prism.Ioc;
 using Prism.DryIoc;
-using Prism.Ioc;
+using System.Windows;
 using Prism.Modularity;
+using InfoKiosk.Modules.Navigation;
 
 namespace InfoKiosk.App
 {
@@ -12,14 +13,17 @@ namespace InfoKiosk.App
     {
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterInstance<PrismApplication>(this);
         }
 
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
         }
+
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
+            moduleCatalog.AddModule<NavigationModule>();
         }
     }
 }

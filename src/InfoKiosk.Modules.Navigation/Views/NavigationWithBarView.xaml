@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="InfoKiosk.Modules.Navigation.Views.NavigationWithBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InfoKiosk.Modules.Navigation.Views"
+             xmlns:regions="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button 
+            Content="Previous" 
+            Command="{Binding NavigateToPreviousCommand}"/>
+
+        <Button
+            Grid.Column="1"
+            Content="Home" 
+            Command="{Binding NavigateToHomeCommand}"/>
+
+        <ContentControl 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            regions:RegionManager.RegionManager="{Binding RegionManager}"
+            regions:RegionManager.RegionName="NavigationContentRegion" 
+            MinHeight="150" 
+            MinWidth="150"/>
+    </Grid>
+</UserControl>
