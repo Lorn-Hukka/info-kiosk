@@ -3,6 +3,7 @@ using Prism.DryIoc;
 using System.Windows;
 using Prism.Modularity;
 using InfoKiosk.Modules.Navigation;
+using InfoKiosk.Modules.Survey;
 
 namespace InfoKiosk.App
 {
@@ -23,7 +24,9 @@ namespace InfoKiosk.App
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
+            moduleCatalog.AddModule<SurveyModule>();
             moduleCatalog.AddModule<NavigationModule>();
+            
         }
     }
 }
