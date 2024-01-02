@@ -397,3 +397,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .idea
+/src/InfoKiosk.Modules.Survey/Views/TestDanych.xaml
+/src/InfoKiosk.Modules.Survey/Views/TestDanych.xaml.cs
