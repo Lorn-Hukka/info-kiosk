@@ -10,8 +10,9 @@ namespace InfoKiosk.Modules.Survey
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(TestDanych));
-            //regionManager.RegisterViewWithRegion("MainRegion", typeof(KeyBoardView));
+            //regionManager.RegisterViewWithRegion("MainRegion", typeof(TestDanych));
+            regionManager.RegisterViewWithRegion("MainRegion", typeof(SurveyQuestionView));
+            regionManager.RegisterViewWithRegion("MainRegion", typeof(KeyBoardView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
