@@ -14,7 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListBox BorderThickness="0" Name="ListBoxAnkieta" Margin="20" ItemsSource="{Binding Pytania}" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
+        <ListBox  BorderThickness="0" Name="ListBoxAnkieta" Margin="20" ItemsSource="{Binding Pytania}" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Loaded="ListBoxAnkieta_Loaded" SelectionChanged="ListBoxAnkieta_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

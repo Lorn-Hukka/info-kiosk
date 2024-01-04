@@ -1,4 +1,5 @@
 ﻿using InfoKiosk.Modules.Survey.Models;
+using InfoKiosk.Modules.Survey.ViewModel;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,17 +11,19 @@ namespace InfoKiosk.Modules.Survey.Views
     /// </summary>
     public partial class KeyBoardView : UserControl
     {
+        
         private bool capsLockEnabled = false;
         private bool shiftEnabled = false;
         private ObservableCollection<ButtonModel> buttons;
-
-        public KeyBoardView()
+        public delegate void SelectionChangedEventHandler(int questionIndex);
+        public static event SelectionChangedEventHandler SelectionChanged;
+        private SurveyDbContext _context;
+        public KeyBoardView(SurveyDbContext context)
         {
+            _context = context;
             InitializeComponent();
             InitializeButtons();
-            capsLockEnabled = Console.CapsLock;
             UpdateButtonsContent();
-
             Loaded += ScreenKeyBoard_Loaded;
         }
         private void ScreenKeyBoard_Loaded(object sender, RoutedEventArgs e)
@@ -157,13 +160,36 @@ namespace InfoKiosk.Modules.Survey.Views
         {
             foreach (var buttonModel in buttons)
             {
-                if (buttonModel.OriginalContent != "⇪" && buttonModel.OriginalContent != "Alt" && buttonModel.OriginalContent != "&#x232B;")
+                if (buttonModel.OriginalContent != "⇪" && buttonModel.OriginalContent != "Alt"
+                    && buttonModel.OriginalContent != "&#x232B;")
                 {
                     buttonModel.Content = GetModifiedContent(buttonModel.OriginalContent);
                 }
                 else
                 {
                     buttonModel.Content = buttonModel.OriginalContent;
+                }
+            }
+        }
+
+        private void Button_Click_Next(object sender, RoutedEventArgs e)
+        {
+            if (textBox.Text != string.Empty)
+            {
+
+                var viewModel = (SurveyQuestionViewModel)DataContext;
+                int maxIdOdpowiedzi = _context.Odpowiedzi.Any() ? _context.Odpowiedzi.Max(x => x.IdOdpowiedzi) + 1 : 1;
+                if (true) {
+                    _context.Odpowiedzi.Add(new Odpowiedz()
+                    {
+
+                        IdOdpowiedzi = maxIdOdpowiedzi,
+                        IdPytania = viewModel.SelectedPytanie.IdPytania,
+                        TrescOdpowiedzi = textBox.Text
+                    });;
+                    _context.SaveChanges();
+                    textBox.Text = string.Empty;
+                    SelectionChanged?.Invoke(1);
                 }
             }
         }

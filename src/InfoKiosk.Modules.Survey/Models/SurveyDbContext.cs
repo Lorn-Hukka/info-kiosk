@@ -13,7 +13,7 @@ namespace InfoKiosk.Modules.Survey.Models
         public DbSet<Ankieta> Ankiety { get; set; }
         public DbSet<Pytanie> Pytania { get; set; }
 
-        public DbSet<Odpowiedz> Odopowiedzi { get; set; }
+        public DbSet<Odpowiedz> Odpowiedzi { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
