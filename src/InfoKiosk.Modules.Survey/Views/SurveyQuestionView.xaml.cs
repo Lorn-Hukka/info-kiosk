@@ -16,25 +16,25 @@ namespace InfoKiosk.Modules.Survey.Views
             DataContext = new SurveyQuestionViewModel();
             KeyBoardView.SelectionChanged += HandleSelectionChanged;
             InitializeComponent();
-            ListBoxAnkieta.SelectionChanged += ListBoxAnkieta_SelectionChanged;
+            ListBoxPytanie.SelectionChanged += ListBoxPytanie_SelectionChanged;
 
         }
 
         private void HandleSelectionChanged(int selectedIndex)
         {         
             // Obsługa zmiany zaznaczenia
-            ListBoxAnkieta.SelectedIndex = selectedIndex;
+            ListBoxPytanie.SelectedIndex = selectedIndex;
         }
-        private void ListBoxAnkieta_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListBoxPytanie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Dodaj kod obsługujący zmianę zaznaczenia na liście
+            
             var viewModel = (SurveyQuestionViewModel)DataContext;
-            viewModel.SelectedPytanie = ListBoxAnkieta.SelectedItem as Pytanie;
+            viewModel.SelectedPytanie = ListBoxPytanie.SelectedItem as Pytanie;
         }
 
-        private void ListBoxAnkieta_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private void ListBoxPytanie_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            ListBoxAnkieta.SelectedIndex = 0;
+            ListBoxPytanie.SelectedIndex = 0;
         }
     }
 }
