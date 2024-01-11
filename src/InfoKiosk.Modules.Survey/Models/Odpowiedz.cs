@@ -15,6 +15,7 @@ namespace InfoKiosk.Modules.Survey.Models
         public int IdOdpowiedzi { get; set;}
 
         public string TrescOdpowiedzi { get; set;}
+        public DateTime CreationTime { get; set; }
 
         public int IdPytania { get; set;}
         public Pytanie Pytanie { get; set;}

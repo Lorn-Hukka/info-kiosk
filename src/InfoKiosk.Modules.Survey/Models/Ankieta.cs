@@ -14,6 +14,8 @@ namespace InfoKiosk.Modules.Survey.Models
 
        public string NazwaAnkiety { get; set; }
 
+       public bool IsActive { get; set; }
+
        public ICollection<Pytanie> Pytania { get; set; }
     }
 }

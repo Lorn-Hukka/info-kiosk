@@ -6,8 +6,75 @@
              xmlns:local="clr-namespace:InfoKiosk.Modules.Survey.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid>
+    <Grid >
+        <Grid x:Name="Grid_Closed_Like" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Bardzo"/>
+            <Button Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Średnio"/>
+            <Button Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Niezbyt"/>
+            <Button Grid.Column="3"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Nie"/>
+        </Grid>
+        <Grid x:Name="Grid_Closed_Stance">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Tak"/>
+            <Button Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Nie mam zdania"/>
+            <Button Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="16"
+                    Margin="5"
+                    Content="Nie"/>
+        </Grid>
+        <Grid x:Name="Grid_Open_Keyboard"
+              Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>

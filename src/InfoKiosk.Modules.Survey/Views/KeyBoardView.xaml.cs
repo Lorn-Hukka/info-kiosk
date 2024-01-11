@@ -184,8 +184,10 @@ namespace InfoKiosk.Modules.Survey.Views
                     {
 
                         IdOdpowiedzi = maxIdOdpowiedzi,
-                        IdPytania = viewModel.SelectedPytanie.IdPytania,
-                        TrescOdpowiedzi = textBox.Text
+                        IdPytania = 1 /*viewModel.SelectedPytanie.IdPytania*/,
+                        TrescOdpowiedzi = textBox.Text,
+                        CreationTime = DateTime.Now.Date
+                        
                     });;
                     _context.SaveChanges();
                     textBox.Text = string.Empty;
