@@ -13,7 +13,7 @@ namespace InfoKiosk.Modules.Survey.Views
        
        public SurveyQuestionView()
         {
-            DataContext = new SurveyQuestionViewModel();
+            DataContext = new SurveyQuestionViewModel(1);
             KeyBoardView.SelectionChanged += HandleSelectionChanged;
             InitializeComponent();
             ListBoxPytanie.SelectionChanged += ListBoxPytanie_SelectionChanged;
@@ -35,6 +35,11 @@ namespace InfoKiosk.Modules.Survey.Views
         private void ListBoxPytanie_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             ListBoxPytanie.SelectedIndex = 0;
+        }
+
+        private void ListBoxAnkieta_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            ListBoxAnkieta.SelectedIndex = 0;
         }
     }
 }

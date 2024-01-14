@@ -172,7 +172,7 @@ namespace InfoKiosk.Modules.Survey.Views
             }
         }
 
-        private void Button_Click_Next(object sender, RoutedEventArgs e)
+        private void Button_Click_Answer(object sender, RoutedEventArgs e)
         {
             if (textBox.Text != string.Empty)
             {

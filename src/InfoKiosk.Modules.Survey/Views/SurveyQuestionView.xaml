@@ -14,14 +14,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListBox  BorderThickness="0"
+        <Label Visibility="Visible"
+               Content="Dziękujemy za wypełnienie ankiety i życzymy miłego dnia."
+               Name="End_Label"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontFamily="Verdana"
+               FontSize="20px"/>
+        <ListBox  Visibility="Hidden"
+                  BorderThickness="0"
                   Name="ListBoxAnkieta"
                   Margin="20"
                   ItemsSource="{Binding Ankiety}"
                   FontFamily="Verdana"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  FontSize="32">
+                  FontSize="32" Loaded="ListBoxAnkieta_Loaded">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -31,7 +39,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox  BorderThickness="0"
+        <ListBox  Visibility="Hidden"
+                  BorderThickness="0"
                   Name="ListBoxPytanie"
                   Margin="20"
                   ItemsSource="{Binding Pytania}"

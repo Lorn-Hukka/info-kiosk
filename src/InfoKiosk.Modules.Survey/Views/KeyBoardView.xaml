@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:InfoKiosk.Modules.Survey.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid >
+    <Grid>
         <Grid x:Name="Grid_Closed_Like" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -19,32 +19,32 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Bardzo"/>
             <Button Grid.Column="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Średnio"/>
             <Button Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Niezbyt"/>
             <Button Grid.Column="3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Nie"/>
         </Grid>
-        <Grid x:Name="Grid_Closed_Stance">
+        <Grid x:Name="Grid_Closed_Stance" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -55,26 +55,55 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Tak"/>
             <Button Grid.Column="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Nie mam zdania"/>
             <Button Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
-                    FontSize="16"
+                    FontSize="20"
                     Margin="5"
                     Content="Nie"/>
         </Grid>
+        <Grid x:Name="Grid_Closed_Survey" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="20"
+                    Margin="5"
+                    Content="Poprzednia ankieta"/>
+            <Button Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="20"
+                    Margin="5"
+                    Content="Wybierz"/>
+            <Button Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Padding="20"
+                    FontSize="20"
+                    Margin="5"
+                    Content="Nastepna ankieta"/>
+        </Grid>
         <Grid x:Name="Grid_Open_Keyboard"
-              Visibility="Hidden">
+              Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
@@ -91,7 +120,7 @@
                 Grid.Column="1"
                 HorizontalAlignment="Stretch"
                 Margin="10"
-                VerticalAlignment="Top"
+                VerticalAlignment="Center"
                 FontSize="14" />
             <Button Content=" "
                     Grid.Column="1"
@@ -107,9 +136,8 @@
                 Grid.Row="2"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Padding="20" Click="Button_Click_Next"
-                
-                />
+                Padding="20"
+                Click="Button_Click_Answer" />
             
             <ItemsControl Grid.ColumnSpan="3"
                           Grid.Column="0" Grid.Row="1"

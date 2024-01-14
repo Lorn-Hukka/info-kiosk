@@ -17,4 +17,8 @@
 	  <Folder Include="Service\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\InfoKiosk.Modules.Navigation\InfoKiosk.Modules.Navigation.csproj" />
+	</ItemGroup>
+
 </Project>
