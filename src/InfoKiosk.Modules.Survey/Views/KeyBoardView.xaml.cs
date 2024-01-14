@@ -255,7 +255,11 @@ namespace InfoKiosk.Modules.Survey.Views
                     {
                         SelectionChanged?.Invoke("Next");
                     }
-                    else SelectionChanged?.Invoke("Last");
+                    else
+                    {
+                        SelectionChanged?.Invoke("Last");
+                        _currentQuestion = 0;
+                    }
                 }
             }
         }
@@ -296,7 +300,11 @@ namespace InfoKiosk.Modules.Survey.Views
             {
                 SelectionChanged?.Invoke("Next");
             }
-            else SelectionChanged?.Invoke("Last");
+            else
+            {
+                SelectionChanged?.Invoke("Last");
+                _currentQuestion = 0;
+            }
             
         }
     }

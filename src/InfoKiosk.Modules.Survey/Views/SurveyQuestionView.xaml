@@ -45,13 +45,12 @@
                   FontFamily="Verdana"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  FontSize="32"
+                  FontSize="26"
                   Loaded="ListBoxPytanie_Loaded">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Path=TrescPytania}" />
-
+                        <TextBlock  TextWrapping="Wrap" Text="{Binding Path=TrescPytania}" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
