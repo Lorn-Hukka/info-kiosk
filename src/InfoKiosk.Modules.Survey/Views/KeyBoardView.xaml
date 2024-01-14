@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid x:Name="Grid_Closed_Like" Visibility="Hidden">
+        <Grid x:Name="Grid_Closed_Like" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -21,28 +21,32 @@
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Bardzo"/>
+                    Content="Bardzo"
+                    Click="Button_Click"/>
             <Button Grid.Column="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Średnio"/>
+                    Content="Średnio"
+                    Click="Button_Click"/>
             <Button Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Niezbyt"/>
+                    Content="Niezbyt"
+                    Click="Button_Click"/>
             <Button Grid.Column="3"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Nie"/>
+                    Content="Nie"
+                    Click="Button_Click"/>
         </Grid>
         <Grid x:Name="Grid_Closed_Stance" Visibility="Hidden">
             <Grid.ColumnDefinitions>
@@ -57,23 +61,26 @@
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Tak"/>
+                    Content="Tak"
+                    Click="Button_Click"/>
             <Button Grid.Column="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Nie mam zdania"/>
+                    Content="Nie mam zdania"
+                    Click="Button_Click"/>
             <Button Grid.Column="2"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Nie"/>
+                    Content="Nie"
+                    Click="Button_Click"/>
         </Grid>
-        <Grid x:Name="Grid_Closed_Survey" Visibility="Visible">
+        <Grid x:Name="Grid_Select_Survey" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -130,7 +137,7 @@
                     Grid.Row="2"
                     HorizontalAlignment="Stretch"
                     Height="60"
-                    Click="Button_Click"
+                    Click="Button_Click_Keyboard"
                     VerticalAlignment="Center"
                     Margin="10" />
             <Button
@@ -160,7 +167,7 @@
                         <Button Content="{Binding Content}"
                                 Width="50"
                                 Height="50"
-                                Click="Button_Click"
+                                Click="Button_Click_Keyboard"
                                 Margin="2"
                                 FontSize="16"/>
                     </DataTemplate>

@@ -25,7 +25,6 @@
                   BorderThickness="0"
                   Name="ListBoxAnkieta"
                   Margin="20"
-                  ItemsSource="{Binding Ankiety}"
                   FontFamily="Verdana"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
@@ -43,13 +42,11 @@
                   BorderThickness="0"
                   Name="ListBoxPytanie"
                   Margin="20"
-                  ItemsSource="{Binding Pytania}"
                   FontFamily="Verdana"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
                   FontSize="32"
-                  Loaded="ListBoxPytanie_Loaded"
-                  SelectionChanged="ListBoxPytanie_SelectionChanged">
+                  Loaded="ListBoxPytanie_Loaded">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

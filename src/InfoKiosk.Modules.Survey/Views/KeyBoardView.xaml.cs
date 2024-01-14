@@ -14,6 +14,9 @@ namespace InfoKiosk.Modules.Survey.Views
         
         private bool capsLockEnabled = false;
         private bool shiftEnabled = false;
+        Pytanie QuestionType;
+        int countvalidation;
+        int _currentQuestion;
         private ObservableCollection<ButtonModel> buttons;
         public delegate void SelectionChangedEventHandler(string type);
         public static event SelectionChangedEventHandler SelectionChanged;
@@ -22,7 +25,14 @@ namespace InfoKiosk.Modules.Survey.Views
         {
             DataContext = viewModel;
             _context = context;
+            SurveyQuestionView.idSurveyProvider += HandleidSurveyProvider;
+            SurveyQuestionView.CurrentQuestion += HandleCurrentQuestion;
             InitializeComponent();
+            Grid_Closed_Like.Visibility = Visibility.Hidden;
+            Grid_Closed_Stance.Visibility = Visibility.Hidden;
+            Grid_Select_Survey.Visibility = Visibility.Visible;
+            Grid_Open_Keyboard.Visibility = Visibility.Hidden;
+
             InitializeButtons();
             UpdateButtonsContent();
             Loaded += ScreenKeyBoard_Loaded;
@@ -65,7 +75,7 @@ namespace InfoKiosk.Modules.Survey.Views
             KeyboardGrid.ItemsSource = buttons;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Keyboard(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
             string content = button.Content.ToString();
@@ -173,26 +183,79 @@ namespace InfoKiosk.Modules.Survey.Views
             }
         }
 
+        private void HandleidSurveyProvider(int idSurvey)
+        {
+            if (idSurvey == 0)
+            {
+
+                Grid_Select_Survey.Visibility = Visibility.Visible;
+                Grid_Closed_Like.Visibility = Visibility.Hidden;
+                Grid_Closed_Stance.Visibility = Visibility.Hidden;
+                Grid_Open_Keyboard.Visibility = Visibility.Hidden;
+
+            }
+            else
+            {
+                QuestionType = (Pytanie)_context.Pytania.Where(x => x.IdPytania == idSurvey).FirstOrDefault();
+                if (QuestionType.TypPytania == "OTWARTE   ")
+                {
+                    Grid_Select_Survey.Visibility = Visibility.Hidden;
+                    Grid_Closed_Like.Visibility = Visibility.Hidden;
+                    Grid_Closed_Stance.Visibility = Visibility.Hidden;
+                    Grid_Open_Keyboard.Visibility = Visibility.Visible;
+                }
+                else if (QuestionType.TypPytania == "ODCZUCIE  ")
+                {
+                    Grid_Select_Survey.Visibility = Visibility.Hidden;
+                    Grid_Closed_Like.Visibility = Visibility.Visible;
+                    Grid_Closed_Stance.Visibility = Visibility.Hidden;
+                    Grid_Open_Keyboard.Visibility = Visibility.Hidden;
+                }
+                else if (QuestionType.TypPytania == "STANOWISKO")
+                {
+                    Grid_Select_Survey.Visibility = Visibility.Hidden;
+                    Grid_Closed_Like.Visibility = Visibility.Hidden;
+                    Grid_Closed_Stance.Visibility = Visibility.Visible;
+                    Grid_Open_Keyboard.Visibility = Visibility.Hidden;
+                }
+                else if (idSurvey == 0)
+                {
+                    Grid_Select_Survey.Visibility = Visibility.Visible;
+                    Grid_Closed_Like.Visibility = Visibility.Hidden;
+                    Grid_Closed_Stance.Visibility = Visibility.Hidden;
+                    Grid_Open_Keyboard.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+        private void HandleCurrentQuestion(int currentQuestion)
+        {
+            _currentQuestion = currentQuestion;
+        }
+
         private void Button_Click_Answer(object sender, RoutedEventArgs e)
         {
             if (textBox.Text != string.Empty)
             {
 
-                var viewModel = (SurveyQuestionViewModel)DataContext;
+                countvalidation = _context.Pytania.Where(x => x.IdAnkiety == QuestionType.IdAnkiety).Count();
                 int maxIdOdpowiedzi = _context.Odpowiedzi.Any() ? _context.Odpowiedzi.Max(x => x.IdOdpowiedzi) + 1 : 1;
                 if (true) {
                     _context.Odpowiedzi.Add(new Odpowiedz()
                     {
 
                         IdOdpowiedzi = maxIdOdpowiedzi,
-                        IdPytania = 1 /*viewModel.SelectedPytanie.IdPytania*/,
+                        IdPytania = QuestionType.IdPytania,
                         TrescOdpowiedzi = textBox.Text,
                         CreationTime = DateTime.Now.Date
                         
                     });;
                     _context.SaveChanges();
                     textBox.Text = string.Empty;
-                    SelectionChanged?.Invoke("Next");
+                    if (countvalidation > _currentQuestion)
+                    {
+                        SelectionChanged?.Invoke("Next");
+                    }
+                    else SelectionChanged?.Invoke("Last");
                 }
             }
         }
@@ -204,13 +267,37 @@ namespace InfoKiosk.Modules.Survey.Views
 
         private void Select_survey_Click(object sender, RoutedEventArgs e)
         {
-
+            SelectionChanged?.Invoke("Select");
         }
 
         private void Next_survey_Click(object sender, RoutedEventArgs e)
         {
             SelectionChanged?.Invoke("Next");
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string content = button.Content.ToString();
+
+            int maxIdOdpowiedzi = _context.Odpowiedzi.Any() ? _context.Odpowiedzi.Max(x => x.IdOdpowiedzi) + 1 : 1;
+            _context.Odpowiedzi.Add(new Odpowiedz()
+            {
+
+                IdOdpowiedzi = maxIdOdpowiedzi,
+                IdPytania = QuestionType.IdPytania,
+                TrescOdpowiedzi = content,
+                CreationTime = DateTime.Now.Date
+
+            }); ;
+            _context.SaveChanges();
+            if (countvalidation > _currentQuestion)
+            {
+                SelectionChanged?.Invoke("Next");
+            }
+            else SelectionChanged?.Invoke("Last");
+            
         }
     }
 }
