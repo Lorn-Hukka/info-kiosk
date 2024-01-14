@@ -100,6 +100,7 @@ namespace InfoKiosk.Modules.Survey.Views
             }
             else if (type == "Last")
             {
+                ListBoxAnkieta.ItemsSource = Ankiety;
                 ListBoxAnkieta.Visibility = Visibility.Hidden;
                 ListBoxPytanie.Visibility = Visibility.Hidden;
                 End_Label.Visibility = Visibility.Visible;
