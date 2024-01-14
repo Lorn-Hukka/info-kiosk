@@ -73,7 +73,7 @@
                     Margin="5"
                     Content="Nie"/>
         </Grid>
-        <Grid x:Name="Grid_Closed_Survey" Visibility="Hidden">
+        <Grid x:Name="Grid_Closed_Survey" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -81,29 +81,32 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0"
+                    Name="Previous_survey"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Poprzednia ankieta"/>
+                    Content="Poprzednia ankieta" Click="Previous_survey_Click"/>
             <Button Grid.Column="1"
+                    Name="Select_survey"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Wybierz"/>
+                    Content="Wybierz" Click="Select_survey_Click"/>
             <Button Grid.Column="2"
+                    Name="Next_survey"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Padding="20"
                     FontSize="20"
                     Margin="5"
-                    Content="Nastepna ankieta"/>
+                    Content="Nastepna ankieta" Click="Next_survey_Click"/>
         </Grid>
         <Grid x:Name="Grid_Open_Keyboard"
-              Visibility="Visible">
+              Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>

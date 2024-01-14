@@ -15,7 +15,7 @@ namespace InfoKiosk.Modules.Survey.Views
         private bool capsLockEnabled = false;
         private bool shiftEnabled = false;
         private ObservableCollection<ButtonModel> buttons;
-        public delegate void SelectionChangedEventHandler(int questionIndex);
+        public delegate void SelectionChangedEventHandler(string type);
         public static event SelectionChangedEventHandler SelectionChanged;
         private SurveyDbContext _context;
         public KeyBoardView(KeyBoardViewModel viewModel,SurveyDbContext context)
@@ -192,9 +192,25 @@ namespace InfoKiosk.Modules.Survey.Views
                     });;
                     _context.SaveChanges();
                     textBox.Text = string.Empty;
-                    SelectionChanged?.Invoke(1);
+                    SelectionChanged?.Invoke("Next");
                 }
             }
+        }
+
+        private void Previous_survey_Click(object sender, RoutedEventArgs e)
+        {
+            SelectionChanged?.Invoke("Previous");
+        }
+
+        private void Select_survey_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Next_survey_Click(object sender, RoutedEventArgs e)
+        {
+            SelectionChanged?.Invoke("Next");
+
         }
     }
 }

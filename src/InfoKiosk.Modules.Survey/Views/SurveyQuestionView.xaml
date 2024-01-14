@@ -14,14 +14,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Visibility="Visible"
+        <Label Visibility="Hidden"
                Content="Dziękujemy za wypełnienie ankiety i życzymy miłego dnia."
                Name="End_Label"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                FontFamily="Verdana"
                FontSize="20px"/>
-        <ListBox  Visibility="Hidden"
+        <ListBox  Visibility="Visible"
                   BorderThickness="0"
                   Name="ListBoxAnkieta"
                   Margin="20"

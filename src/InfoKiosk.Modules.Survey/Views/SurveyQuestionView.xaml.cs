@@ -10,20 +10,46 @@ namespace InfoKiosk.Modules.Survey.Views
     /// </summary>
     public partial class SurveyQuestionView : UserControl
     {
-       
+
+        public int currentIndex;
        public SurveyQuestionView()
         {
-            DataContext = new SurveyQuestionViewModel(1);
+            DataContext = new SurveyQuestionViewModel();
             KeyBoardView.SelectionChanged += HandleSelectionChanged;
             InitializeComponent();
             ListBoxPytanie.SelectionChanged += ListBoxPytanie_SelectionChanged;
 
         }
 
-        private void HandleSelectionChanged(int selectedIndex)
-        {         
-            // Obsługa zmiany zaznaczenia
-            ListBoxPytanie.SelectedIndex = selectedIndex;
+        private void HandleSelectionChanged(string type)
+        {
+            if (ListBoxPytanie.IsVisible)
+            {
+                if (type == "Next" && ListBoxPytanie.SelectedIndex < ListBoxPytanie.Items.Count)
+                {
+                    currentIndex = ListBoxPytanie.SelectedIndex;
+                    ListBoxPytanie.SelectedIndex = currentIndex + 1;
+                }
+                else if(type == "Previous" && ListBoxPytanie.SelectedIndex > 0)
+                {
+                    currentIndex = ListBoxPytanie.SelectedIndex;
+                    ListBoxPytanie.SelectedIndex = currentIndex - 1;
+                }
+
+            }
+            if (ListBoxAnkieta.IsVisible) 
+            {
+                if (type == "Next" && ListBoxAnkieta.SelectedIndex < ListBoxAnkieta.Items.Count)
+                {
+                    currentIndex = ListBoxAnkieta.SelectedIndex;
+                    ListBoxAnkieta.SelectedIndex = currentIndex + 1;
+                }
+                else if (type == "Previous" && ListBoxAnkieta.SelectedIndex > 0)
+                {
+                    currentIndex = ListBoxAnkieta.SelectedIndex;
+                    ListBoxAnkieta.SelectedIndex = currentIndex - 1;
+                }
+            }
         }
         private void ListBoxPytanie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -6,7 +6,7 @@ namespace InfoKiosk.Modules.Survey.ViewModel
     {
         public List<Pytanie> Pytania { get; set; }
         public List<Ankieta> Ankiety { get; set; }
-
+ 
         public Pytanie SelectedPytanie { get; set; }
         public SurveyQuestionViewModel()
         {
