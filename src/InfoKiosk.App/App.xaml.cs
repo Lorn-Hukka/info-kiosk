@@ -26,9 +26,9 @@ namespace InfoKiosk.App
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             
-            moduleCatalog.AddModule<SurveyModule>();
             moduleCatalog.AddModule<NavigationModule>();
-            
+            moduleCatalog.AddModule<SurveyModule>();
+
         }
     }
 }

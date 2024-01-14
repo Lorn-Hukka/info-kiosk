@@ -18,8 +18,9 @@ namespace InfoKiosk.Modules.Survey.Views
         public delegate void SelectionChangedEventHandler(int questionIndex);
         public static event SelectionChangedEventHandler SelectionChanged;
         private SurveyDbContext _context;
-        public KeyBoardView(SurveyDbContext context)
+        public KeyBoardView(KeyBoardViewModel viewModel,SurveyDbContext context)
         {
+            DataContext = viewModel;
             _context = context;
             InitializeComponent();
             InitializeButtons();
